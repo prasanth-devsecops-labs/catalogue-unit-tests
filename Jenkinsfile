@@ -30,15 +30,15 @@ pipeline {
                 }
             }
         }
-        // stage('Install dependencies') {
-        //     steps {
-        //         script{
-        //             sh """
-        //                 npm install
-        //             """
-        //         }
-        //     }
-        // }
+        stage('Install dependencies') {
+            steps {
+                script{
+                    sh """
+                        npm ci
+                    """
+                }
+            }
+        }
         stage('Unit tests') {
             steps {
                 script{
