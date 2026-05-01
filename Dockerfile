@@ -12,8 +12,8 @@ COPY --from=builder /app /app
 ENV MONGO="true" \
     MONGO_URL="mongodb://mongodb:27017/catalogue"
 RUN addgroup -S roboshop && adduser -S roboshop -G roboshop && \
-    apk --no-cache update && apk --no-cache upgrade
-RUN chown -R roboshop:roboshop /app
+    apk --no-cache update && apk --no-cache upgrade && \
+    chown -R roboshop:roboshop /app
 USER roboshop
 CMD ["server.js"]
 ENTRYPOINT ["node"]
