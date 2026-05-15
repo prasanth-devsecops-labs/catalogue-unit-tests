@@ -5,7 +5,7 @@ on:
 jobs:
   # Job name
   feature-pipeline:
-    if: github.ref_name == 'feature-*'
+    if: startsWith(github.ref_name, 'feature-')
     uses: prasanth-devsecops-labs/workflows/.github/workflows/nodejs-feature-pipeline.yaml@main
     with:
       project: 'roboshop'
