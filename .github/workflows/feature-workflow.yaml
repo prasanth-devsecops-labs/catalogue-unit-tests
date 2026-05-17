@@ -11,4 +11,3 @@ jobs:
       project: 'roboshop'
       component: 'catalogue'
     secrets: inherit
-
