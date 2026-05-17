@@ -1,0 +1,13 @@
+name: feature-pipeline
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  # Job name
+  feature-pipeline:
+    if: startsWith(github.ref_name, 'feature-')
+    uses: prasanth-devsecops-labs/workflows/.github/workflows/nodejs-feature-pipeline.yaml@main
+    with:
+      project: 'roboshop'
+      component: 'catalogue'
+    secrets: inherit
